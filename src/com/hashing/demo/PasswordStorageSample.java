@@ -9,14 +9,12 @@ import javax.crypto.spec.PBEKeySpec;
 
 public class PasswordStorageSample {
 
+  //Main function created to demonstrate the program
   public static void main(String[] args) throws Exception {
     String password = "1234";
     String wrongPassword = "12234";
     String hashPassword = createHash(password.toCharArray());
    // String hashPassword = createHash(wrongPassword.toCharArray());
-    System.out.println(
-        "Password hash in format - algorithm:iterations:hashSize:salt:hash is  " + hashPassword);
-
     boolean isCorrectPassword = verifyPassword(password, hashPassword);
 
     if (isCorrectPassword) {
